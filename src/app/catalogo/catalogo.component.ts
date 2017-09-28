@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from '../data.service'
 import {Http,Response} from '@angular/http';
-import {ProdDetailsComponent} from '../prod-details/prod-details.component'
-declare var $:any;
+import {HomeComponent} from '../home/home.component'
+
+
 @Component({
 selector: 'app-catalogo',
 templateUrl: './catalogo.component.html',
@@ -12,7 +13,7 @@ providers:[DataService]
 export class CatalogoComponent implements OnInit {
 productos=[]
 
-constructor(private dataService: DataService) { this.onChange('') }
+constructor(private dataService: DataService,private home:HomeComponent) { this.onChange('') }
 
 ngOnInit() {
 }
@@ -34,20 +35,18 @@ this.productos.push(prod)
 }
 
 verProducto(nombre){
-this.openMyDialog()
+
 for (let prod of this.productos) {
 if(prod.nombre==nombre){
-
-return prod
+  localStorage.setItem('currentProd', JSON.stringify(prod))
+  this.home.changeVisibility()  
+return
 }
 
 }
 }
 
 
-openMyDialog() {
-let a= document.getElementById('myDialog')
 
-}
 
 }

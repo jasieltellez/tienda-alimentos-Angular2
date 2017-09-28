@@ -23,7 +23,7 @@
           <p>Disponibles:{{prod.disponible}}</p>
         </div>
         <div class="col l12 card-action">
-          <button class="btn col l5"type="button" name="{{prod.nombre}}"  #input (click)="verProducto(input.name)">Ver mas</button>
+          <button  class="btn col l5"type="button" name="{{prod.nombre}}"  #input (click)="verProducto(input.name)">Ver mas</button>
           <button class="btn col l5"type="button" name="button">Añadir</button>
           <input type="number" class="col l4 cantidad"  name="" value="1" max="{{prod.disponible}}"min="1">
 
@@ -34,13 +34,3 @@
 
   </div>
 </div>
-<!-- Modal Trigger -->
-  
-<dialog open id="myDialog">
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <app-prod-details></app-prod-details>
-    </div>
-  </div>
-</dialog>

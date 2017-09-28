@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {HomeComponent} from '../home/home.component'
+
 
 @Component({
   selector: 'app-prod-details',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./prod-details.component.css']
 })
 export class ProdDetailsComponent implements OnInit {
-
-  constructor() { }
+producto=''
+  constructor(private home:HomeComponent) { }
 
   ngOnInit() {
+  this.producto=JSON.parse(localStorage.getItem('currentProd'))
   }
 
+back(){
+  this.home.changeVisibility()
+}
 }

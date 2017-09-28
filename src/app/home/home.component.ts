@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import {NavBarComponent} from '../nav-bar/nav-bar.component'
 import {CatalogoComponent} from '../catalogo/catalogo.component'
+import {ProdDetailsComponent} from '../prod-details/prod-details.component'
 
 @Component({
   selector: 'app-home',
@@ -11,6 +12,7 @@ import {CatalogoComponent} from '../catalogo/catalogo.component'
 export class HomeComponent implements OnInit {
 catalogoVisible=true;
 detailsVisible=false;
+cartVisible=false;
 
   constructor() { }
 
