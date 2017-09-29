@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from '../data.service'
 import {Http,Response} from '@angular/http';
-import {HomeComponent} from '../home/home.component'
+import {HomeComponent} from '../home/home.component';
+
 
 
 @Component({
@@ -11,7 +12,8 @@ styleUrls: ['./catalogo.component.css'],
 providers:[DataService]
 })
 export class CatalogoComponent implements OnInit {
-productos=[]
+productos
+kart=JSON.parse(localStorage.getItem('kart'))
 
 constructor(private dataService: DataService,private home:HomeComponent) { this.onChange('') }
 
@@ -39,14 +41,23 @@ verProducto(nombre){
 for (let prod of this.productos) {
 if(prod.nombre==nombre){
   localStorage.setItem('currentProd', JSON.stringify(prod))
-  this.home.changeVisibility()  
+  this.home.changeVisibility()
 return
 }
 
 }
 }
 
+addToKart(nombre){
+for (let prod of this.productos) {
+if(prod.nombre==nombre){
+  this.kart.push(prod)
+  localStorage.setItem('kart', JSON.stringify(this.kart))
+  
+  this.home.actualizarKart()
+return
+}
+}
 
-
-
+}
 }

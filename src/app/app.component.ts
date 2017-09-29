@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
+  kart=[];
+constructor(){
+  localStorage.setItem('kart', JSON.stringify(this.kart))
+}
+
 }
