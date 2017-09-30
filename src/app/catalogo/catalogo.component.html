@@ -24,8 +24,8 @@
         </div>
         <div class="col l12 card-action">
           <button  class="btn col l5"type="button" name="{{prod.nombre}}"  #input (click)="verProducto(input.name)">Ver mas</button>
-          <button class="btn col l5"type="button" name="{{prod.nombre}}"#inputAdd (click)="addToKart(inputAdd.name)">Añadir</button>
-          <input type="number" class="col l4 cantidad"   value="1" max="{{prod.disponible}}"min="1">
+          <button class="btn col l5"type="button" name="{{prod.nombre}}"#inputAdd (click)="addToKart(inputAdd.name,cant.value)">Añadir</button>
+          <input type="number" class="col l4 cantidad"   value="1" max="{{prod.disponible}}"min="1"#cant>
 
         </div>
       </div>

@@ -48,12 +48,14 @@ return
 }
 }
 
-addToKart(nombre){
+addToKart(nombre,cantidad){
 for (let prod of this.productos) {
 if(prod.nombre==nombre){
-  this.kart.push(prod)
+let subtotal=prod.precio*cantidad;
+let p=JSON.parse(`{"nombre":"${prod.nombre}","subtotal":"${subtotal}","cantidad":"${cantidad}"}`)
+  this.kart.push(p)
   localStorage.setItem('kart', JSON.stringify(this.kart))
-  
+
   this.home.actualizarKart()
 return
 }

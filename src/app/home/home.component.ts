@@ -2,6 +2,7 @@ import { Component, OnInit,ViewChild} from '@angular/core';
 import {NavBarComponent} from '../nav-bar/nav-bar.component'
 import {CatalogoComponent} from '../catalogo/catalogo.component'
 import {ProdDetailsComponent} from '../prod-details/prod-details.component'
+import {CartComponent} from '../cart/cart.component'
 
 @Component({
   selector: 'app-home',
@@ -30,9 +31,17 @@ this.catalogoVisible=!this.catalogoVisible;
 this.detailsVisible=!this.detailsVisible;
 }
 
+
 actualizarKart(){
   this.contador.actualizarContador()
 
 
 }
+
+showCart():void{
+  this.cartVisible=true;
+  this.catalogoVisible=false;
+  this.detailsVisible=false;
+  
+   }
 }

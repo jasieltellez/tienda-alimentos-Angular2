@@ -1,4 +1,5 @@
 import { Component, OnInit,Input, Output, EventEmitter  } from '@angular/core';
+import {HomeComponent} from '../home/home.component';
 
 @Component({
   selector: 'app-nav-bar',
@@ -8,6 +9,7 @@ import { Component, OnInit,Input, Output, EventEmitter  } from '@angular/core';
 export class NavBarComponent implements OnInit {
 contProductos=0;
 badgeVisible=false;
+@Output() ShowCart = new EventEmitter();
 
   constructor() { }
 
@@ -28,4 +30,12 @@ badgeVisible=false;
         this.badgeVisible=true;
   }
  }
+
+
+ verCarrito(){
+
+  this.ShowCart.emit();
+
+ }
+
 }
