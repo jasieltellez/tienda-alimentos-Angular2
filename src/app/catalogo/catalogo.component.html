@@ -20,7 +20,7 @@
         <div class="col l12 card-content">
           <h5>{{prod.nombre|uppercase}}</h5>
           <p>Precio: CLP{{prod.precio}}</p>
-          <p>Disponibles:{{prod.disponible}}</p>
+          <p>Disponibles: {{prod.disponible}}</p>
         </div>
         <div class="col l12 card-action">
           <button  class="btn col l5"type="button" name="{{prod.nombre}}"  #input (click)="verProducto(input.name)">Ver mas</button>
